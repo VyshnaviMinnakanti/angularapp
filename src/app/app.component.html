@@ -1,0 +1,43 @@
+
+<!--String interpolation-->
+
+<h1>Parent Component</h1>
+<div>{{title | uppercase}}</div>
+
+<!--property binding-->
+<div [innerText]="title"></div>
+<input [(ngModel)]="title" type="text">
+
+<div> {{ 123.14 | currency}}</div>
+<div> {{ 123.14 | currency :"INR"}}</div>
+
+<!--Event binding-->
+<button (click)="onClick()"> test</button>
+
+<div [ngSwitch]="students.length">
+  <li *ngSwitchCase=0>1</li> 
+  <li *ngSwitchCase=1>2</li> 
+  <li *ngSwitchCase=2>3</li> 
+  <li *ngSwitchDefault>More</li>
+</div>
+
+<ul>
+  <div *ngIf="students.length >0">
+      <li *ngFor="let student of students">
+          {{student}}
+      </li>
+  </div>
+  
+  <div *ngIf="students.length ==0">
+      Zero Students
+  </div>
+</ul>
+
+<div style="background-color: red;"> I am Attribute</div>
+<div [ngStyle]="{'background-color' : colorName}">I am ngStyle Attribute directive</div>
+
+<div [ngClass]="className">
+  I am ngClass directive
+</div>
+
+
